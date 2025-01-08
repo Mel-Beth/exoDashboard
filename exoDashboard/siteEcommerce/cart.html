@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panier</title>
+  <!-- Importation des styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 h-screen overflow-hidden">
+  <!-- bg-gray-100 : Fond gris clair -->
+  <!-- h-screen : Hauteur pleine page -->
+  <!-- overflow-hidden : Cache tout débordement -->
+
+  <!-- Barre latérale -->
+  <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
+    <!-- fixed : Position fixe -->
+    <!-- inset-y-0 : Alignement sur toute la hauteur -->
+    <!-- left-0 : Collé à gauche -->
+    <!-- w-60 : Largeur de 60 unités -->
+    <!-- bg-gradient-to-b : Dégradé vertical -->
+    <!-- from-yellow-300 to-yellow-500 : Dégradé jaune clair vers foncé -->
+    <!-- shadow-lg : Ombre large -->
+    <!-- flex flex-col : Flexbox en colonne -->
+    <!-- z-10 : Position z-index au-dessus des autres éléments -->
+
+    <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <!-- p-6 : Padding intérieur -->
+      <!-- text-center : Texte centré -->
+      <!-- text-white : Texte en blanc -->
+      <!-- font-bold : Texte en gras -->
+      <!-- text-xl : Taille de texte extra-large -->
+      <!-- border-b : Bordure inférieure -->
+      <i class="fas fa-store mr-2"></i>Vide Ton Porte-Monnaie
+    </div>
+
+    <!-- Menu de navigation -->
+    <nav class="flex-1 p-4 space-y-4">
+      <!-- flex-1 : Remplit tout l'espace disponible -->
+      <!-- p-4 : Padding intérieur -->
+      <!-- space-y-4 : Espacement vertical de 4 unités -->
+      <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <!-- flex : Alignement horizontal -->
+        <!-- items-center : Centrage vertical -->
+        <!-- space-x-3 : Espacement horizontal entre les enfants -->
+        <!-- text-white : Texte blanc -->
+        <!-- hover:text-yellow-200 : Texte jaune clair au survol -->
+        <!-- p-3 : Padding intérieur -->
+        <!-- rounded-lg : Coins arrondis -->
+        <i class="fas fa-chart-line"></i> <span>Accueil</span>
+      </a>
+      <a href="cart.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-truck"></i> <span>Panier</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <!-- fixed : Position fixe en haut -->
+    <!-- top-0 : Alignement en haut -->
+    <!-- left-60 : Décalage pour la barre latérale -->
+    <!-- right-0 : Étend jusqu'à la droite -->
+    <!-- bg-white : Fond blanc -->
+    <!-- shadow-md : Ombre moyenne -->
+    <!-- h-16 : Hauteur de 16 unités -->
+    <!-- flex : Utilisation de flexbox -->
+    <!-- items-center : Centre verticalement -->
+    <!-- px-6 : Padding horizontal -->
+    <!-- z-10 : Au-dessus des autres éléments -->
+    <h1 class="text-xl font-bold text-yellow-700 flex-1">Mon Panier</h1>
+    <a href="index.html" class="bg-yellow-500 text-white px-4 py-2 rounded-md shadow hover:bg-yellow-600">
+      <!-- bg-yellow-500 : Bouton jaune -->
+      <!-- text-white : Texte blanc -->
+      <!-- px-4 py-2 : Padding horizontal et vertical -->
+      <!-- rounded-md : Coins légèrement arrondis -->
+      <!-- shadow : Ombre légère -->
+      <!-- hover:bg-yellow-600 : Jaune plus foncé au survol -->
+      Retour à la Boutique
+    </a>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="ml-60 pt-16 p-6 h-screen overflow-auto">
+    <!-- ml-60 : Décalage à gauche pour la barre latérale -->
+    <!-- pt-16 : Padding supérieur pour éviter la navbar -->
+    <!-- p-6 : Padding intérieur -->
+    <!-- h-screen : Hauteur pleine page -->
+    <!-- overflow-auto : Scroll activé si nécessaire -->
+    <h2 class="text-2xl font-bold mb-6">Articles dans le panier</h2>
+    <!-- text-2xl : Texte très grand -->
+    <!-- font-bold : Texte en gras -->
+    <!-- mb-6 : Marge inférieure -->
+
+    <div id="cart-items" class="space-y-6">
+      <!-- space-y-6 : Espacement vertical entre les éléments -->
+    </div>
+
+    <!-- Total et bouton de validation -->
+    <div class="mt-6 border-t pt-4">
+      <!-- mt-6 : Marge supérieure -->
+      <!-- border-t : Bordure en haut -->
+      <!-- pt-4 : Padding supérieur -->
+      <h2 class="text-xl font-bold">Total : <span id="cart-total">0 €</span></h2>
+      <!-- text-xl : Texte extra-large -->
+      <!-- font-bold : Texte en gras -->
+
+      <button id="checkoutButton" class="bg-yellow-500 text-white px-6 py-2 rounded-md hover:bg-yellow-600 mt-4">
+        <!-- bg-yellow-500 : Fond jaune -->
+        <!-- text-white : Texte blanc -->
+        <!-- px-6 py-2 : Padding horizontal et vertical -->
+        <!-- rounded-md : Coins arrondis -->
+        <!-- hover:bg-yellow-600 : Jaune plus foncé au survol -->
+        <!-- mt-4 : Marge supérieure -->
+        Valider la commande
+      </button>
+    </div>
+  </main>
+
+  <script src="cart.js"></script>
+</body>
+</html>

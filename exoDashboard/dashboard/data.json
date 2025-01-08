@@ -1,0 +1,173 @@
+{
+    "articles": [
+      {
+        "id": 1,
+        "name": "Smartphone XYZ",
+        "category": "Électronique",
+        "price": 699.99,
+        "stock": 120,
+        "description": "Un smartphone haut de gamme avec 128 Go de stockage.",
+        "createdAt": "2025-01-01",
+        "updatedAt": "2025-01-05"
+      },
+      {
+        "id": 2,
+        "name": "Chaise ergonomique",
+        "category": "Mobilier",
+        "price": 129.99,
+        "stock": 45,
+        "description": "Chaise de bureau confortable et ajustable.",
+        "createdAt": "2025-01-02",
+        "updatedAt": "2025-01-05"
+      },
+      {
+        "id": 3,
+        "name": "Montre connectée Alpha",
+        "category": "Accessoires",
+        "price": 199.99,
+        "stock": 78,
+        "description": "Montre connectée avec moniteur de santé intégré.",
+        "createdAt": "2025-01-03",
+        "updatedAt": "2025-01-05"
+      },
+      {
+        "id": 4,
+        "name": "Ordinateur portable Pro X",
+        "category": "Électronique",
+        "price": 1299.99,
+        "stock": 50,
+        "description": "Un ordinateur portable ultra-fin avec un écran Retina et 512 Go de stockage SSD.",
+        "createdAt": "2025-01-07",
+        "updatedAt": "2025-01-07"
+      },
+      {
+        "id": 5,
+        "name": "Casque Audio Bass Boost",
+        "category": "Accessoires",
+        "price": 149.99,
+        "stock": 100,
+        "description": "Casque audio sans fil avec réduction de bruit active et basses puissantes.",
+        "createdAt": "2025-01-07",
+        "updatedAt": "2025-01-07"
+      },           
+      {
+        "id": 6,
+        "name": "Lampe LED Intelligente",
+        "category": "Maison",
+        "price": 29.99,
+        "stock": 200,
+        "description": "Lampe LED connectée avec contrôle vocal et couleurs personnalisables.",
+        "createdAt": "2025-01-07",
+        "updatedAt": "2025-01-07"
+      },
+      {
+        "id": 7,
+        "name": "Sac à dos antivol",
+        "category": "Accessoires",
+        "price": 59.99,
+        "stock": 80,
+        "description": "Sac à dos sécurisé avec fermetures dissimulées et port USB intégré.",
+        "createdAt": "2025-01-07",
+        "updatedAt": "2025-01-07"
+      }         
+    ],
+    "orders": [
+      {
+        "id": 1001,
+        "user": "John Doe",
+        "status": "Pending",
+        "totalPrice": 899.98,
+        "items": [
+          { "articleId": 1, "quantity": 1 },
+          { "articleId": 3, "quantity": 1 }
+        ],
+        "createdAt": "2025-01-04",
+        "updatedAt": null
+      },
+      {
+        "id": 1002,
+        "user": "Jane Smith",
+        "status": "Approved",
+        "totalPrice": 129.99,
+        "items": [
+          { "articleId": 2, "quantity": 1 }
+        ],
+        "createdAt": "2025-01-05",
+        "updatedAt": "2025-01-05"
+      },
+      {
+        "id": 1003,
+        "user": "Alice Brown",
+        "status": "Rejected",
+        "totalPrice": 199.99,
+        "items": [
+          { "articleId": 3, "quantity": 1 }
+        ],
+        "createdAt": "2025-01-05",
+        "updatedAt": "2025-01-05"
+      }
+    ],
+    "stats": {
+      "trafficByDay": [
+        { "date": "2025-01-01", "users": 150 },
+        { "date": "2025-01-02", "users": 175 },
+        { "date": "2025-01-03", "users": 200 },
+        { "date": "2025-01-04", "users": 250 },
+        { "date": "2025-01-05", "users": 300 }
+      ],
+      "ordersByDay": [
+        { "date": "2025-01-01", "orders": 3 },
+        { "date": "2025-01-02", "orders": 5 },
+        { "date": "2025-01-03", "orders": 8 },
+        { "date": "2025-01-04", "orders": 12 },
+        { "date": "2025-01-05", "orders": 10 }
+      ],
+      "ordersByCategory": [
+        {
+          "category": "Électronique",
+          "data": [
+            { "date": "2025-01-01", "orders": 1 },
+            { "date": "2025-01-02", "orders": 2 },
+            { "date": "2025-01-03", "orders": 3 },
+            { "date": "2025-01-04", "orders": 4 },
+            { "date": "2025-01-05", "orders": 5 }
+          ]
+        },
+        {
+          "category": "Mobilier",
+          "data": [
+            { "date": "2025-01-01", "orders": 0 },
+            { "date": "2025-01-02", "orders": 1 },
+            { "date": "2025-01-03", "orders": 1 },
+            { "date": "2025-01-04", "orders": 2 },
+            { "date": "2025-01-05", "orders": 1 }
+          ]
+        },
+        {
+          "category": "Accessoires",
+          "data": [
+            { "date": "2025-01-01", "orders": 2 },
+            { "date": "2025-01-02", "orders": 2 },
+            { "date": "2025-01-03", "orders": 4 },
+            { "date": "2025-01-04", "orders": 6 },
+            { "date": "2025-01-05", "orders": 4 }
+          ]
+        }
+      ],
+      "revenues": {
+        "daily": [
+          { "date": "2025-01-01", "revenue": 1029.97 },
+          { "date": "2025-01-02", "revenue": 1299.94 },
+          { "date": "2025-01-03", "revenue": 1599.91 },
+          { "date": "2025-01-04", "revenue": 1999.88 },
+          { "date": "2025-01-05", "revenue": 1299.95 }
+        ],
+        "weekly": [
+          { "week": "2025-W01", "revenue": 7229.65 }
+        ],
+        "monthly": [
+          { "month": "2025-01", "revenue": 7229.65 }
+        ]
+      }
+    }
+  }

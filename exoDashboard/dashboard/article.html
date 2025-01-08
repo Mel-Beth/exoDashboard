@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Détails de l'article</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 h-screen overflow-auto">
+
+    <!-- Barre latérale -->
+  <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
+    <!-- Titre -->
+    <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <i class="fas fa-store mr-2"></i>E-commerce
+    </div>
+    <!-- Menu -->
+    <nav class="flex-1 p-4 space-y-4">
+      <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-chart-line"></i> <span>Tableau de Bord</span>
+      </a>
+      <a href="articles.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-box"></i> <span>Articles</span>
+      </a>
+      <a href="commandes.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-truck"></i> <span>Commandes</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <h1 class="text-xl font-bold text-yellow-700 flex-1">Articles</h1>
+    <a href="index.html" class="bg-yellow-500 text-white px-4 py-2 rounded-md shadow hover:bg-yellow-600">
+      Retour au Dashboard
+    </a>
+  </header>
+
+  <!-- Contenu principal -->
+  <main id="article-details" class="p-6 max-w-4xl mx-auto bg-white rounded-lg shadow-lg mt-20">
+
+    <!-- Les détails de l'article seront générés ici -->
+  </main>
+
+  <!-- Script -->
+  <script src="article.js"></script>
+</body>
+</html>

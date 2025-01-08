@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 h-screen overflow-auto">
+
+    <!-- Barre latérale -->
+  <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
+    <!-- Titre -->
+    <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <i class="fas fa-store mr-2"></i>E-commerce
+    </div>
+    <!-- Menu -->
+    <nav class="flex-1 p-4 space-y-4">
+      <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-chart-line"></i> <span>Tableau de Bord</span>
+      </a>
+      <a href="articles.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-box"></i> <span>Articles</span>
+      </a>
+      <a href="commandes.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-truck"></i> <span>Commandes</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <h1 class="text-xl font-bold text-yellow-700 flex-1">Articles</h1>
+    <a href="index.html" class="bg-yellow-500 text-white px-4 py-2 rounded-md shadow hover:bg-yellow-600 ml-4">
+      Retour au Dashboard
+    </a>
+  </header>
+
+  <!-- Contenu -->
+  <main class="ml-60 pt-16 p-6 h-screen overflow-auto">
+    <h2 class="text-2xl font-bold mb-6">Liste des Articles</h2>
+    <!-- Grille d'articles -->
+    <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+
+    <!-- Formulaire pour ajouter un article -->
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6 mt-6">
+        <h3 class="text-xl font-bold mb-4">Ajouter un nouvel article</h3>
+        <input id="newName" type="text" placeholder="Nom de l'article" class="w-full p-2 mb-4 border rounded">
+        <input id="newPrice" type="number" placeholder="Prix (€)" class="w-full p-2 mb-4 border rounded">
+        <input id="newStock" type="number" placeholder="Stock" class="w-full p-2 mb-4 border rounded">
+        <input id="newCategory" type="text" placeholder="Catégorie" class="w-full p-2 mb-4 border rounded">
+        <textarea id="newDescription" placeholder="Description" class="w-full p-2 mb-4 border rounded"></textarea>
+        <button onclick="ajouterArticle()" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
+        Ajouter
+        </button>
+    </div>  
+  </main>
+
+  <script src="articles.js"></script>
+</body>
+</html>

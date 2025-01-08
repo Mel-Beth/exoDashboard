@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie des Articles</title>
+  <!-- Importation des styles TailwindCSS et FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 h-screen overflow-hidden">
+  <!-- bg-gray-100 : Fond gris clair -->
+  <!-- h-screen : Hauteur totale de l'écran -->
+  <!-- overflow-hidden : Cache tout dépassement -->
+
+  <!-- Barre latérale -->
+  <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
+    <!-- fixed : Position fixe par rapport à l'écran -->
+    <!-- inset-y-0 : Alignement sur toute la hauteur verticale -->
+    <!-- left-0 : Collée à gauche -->
+    <!-- w-60 : Largeur fixe de 60 unités -->
+    <!-- bg-gradient-to-b : Dégradé vertical -->
+    <!-- from-yellow-300 to-yellow-500 : Dégradé de jaune clair à jaune foncé -->
+    <!-- shadow-lg : Ombre large -->
+    <!-- flex flex-col : Flexbox en colonne -->
+    <!-- z-10 : Position z-index au-dessus des autres éléments -->
+
+    <!-- Titre de la barre latérale -->
+    <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <!-- p-6 : Padding intérieur -->
+      <!-- text-center : Texte centré -->
+      <!-- text-white : Texte blanc -->
+      <!-- font-bold : Texte en gras -->
+      <!-- text-xl : Taille du texte extra-large -->
+      <!-- border-b : Bordure en bas -->
+      <i class="fas fa-store mr-2"></i>Vide Ton Porte-Monnaie
+    </div>
+
+    <!-- Menu de navigation -->
+    <nav class="flex-1 p-4 space-y-4">
+      <!-- flex-1 : Prend tout l'espace disponible -->
+      <!-- p-4 : Padding intérieur -->
+      <!-- space-y-4 : Espacement vertical de 4 unités entre les éléments -->
+      <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <!-- flex : Aligne les enfants horizontalement -->
+        <!-- items-center : Centre les éléments verticalement -->
+        <!-- space-x-3 : Espacement horizontal de 3 unités -->
+        <!-- text-white : Texte blanc -->
+        <!-- hover:text-yellow-200 : Texte jaune clair au survol -->
+        <!-- p-3 : Padding intérieur -->
+        <!-- rounded-lg : Coins arrondis -->
+        <i class="fas fa-chart-line"></i> <span>Accueil</span>
+      </a>
+      <a href="cart.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <i class="fas fa-truck"></i> <span>Panier</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <!-- fixed : Position fixe -->
+    <!-- top-0 : Alignée en haut -->
+    <!-- left-60 : Décalée de 60 unités à droite pour éviter la barre latérale -->
+    <!-- right-0 : S'étend jusqu'à la droite -->
+    <!-- bg-white : Fond blanc -->
+    <!-- shadow-md : Ombre moyenne -->
+    <!-- h-16 : Hauteur fixe de 16 unités -->
+    <!-- flex : Utilisation de flexbox -->
+    <!-- items-center : Centre verticalement les éléments -->
+    <!-- px-6 : Padding horizontal de 6 unités -->
+    <!-- z-10 : Position au-dessus des autres éléments -->
+    <h1 class="text-xl font-bold text-yellow-700 flex-1">Galerie des Articles</h1>
+    <!-- text-xl : Texte extra-large -->
+    <!-- font-bold : Texte en gras -->
+    <!-- text-yellow-700 : Texte jaune foncé -->
+    <!-- flex-1 : Prend tout l'espace disponible -->
+
+    <!-- Icône du panier -->
+    <div id="cartContainer" class="relative">
+      <!-- relative : Position relative pour positionner ses enfants absolument -->
+      <button id="cartButton" class="relative text-yellow-700">
+        <!-- text-yellow-700 : Texte jaune foncé -->
+        <i class="fas fa-shopping-basket text-2xl text-yellow-700"></i>
+        <!-- text-2xl : Icône très grande -->
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5 hidden">
+          <!-- absolute : Positionnement absolu par rapport au bouton parent -->
+          <!-- -top-2 -right-2 : Décalage vers le haut et à droite -->
+          <!-- bg-red-500 : Fond rouge vif -->
+          <!-- text-white : Texte blanc -->
+          <!-- text-xs : Texte très petit -->
+          <!-- font-bold : Texte en gras -->
+          <!-- rounded-full : Coins complètement arrondis -->
+          <!-- px-2 py-0.5 : Padding horizontal et vertical -->
+          <!-- hidden : Caché par défaut -->
+          0
+        </span>
+      </button>
+
+      <!-- Dropdown du panier -->
+      <div id="cartDropdown" class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg hidden z-50">
+        <!-- absolute : Positionnement absolu -->
+        <!-- right-0 : Aligné à droite -->
+        <!-- mt-2 : Marge en haut -->
+        <!-- w-64 : Largeur de 64 unités -->
+        <!-- bg-white : Fond blanc -->
+        <!-- rounded-lg : Coins arrondis -->
+        <!-- shadow-lg : Ombre large -->
+        <!-- hidden : Caché par défaut -->
+        <!-- z-50 : Position z-index très élevée -->
+        <ul id="cartItems" class="p-4"></ul>
+        <div id="viewAllCart" class="p-4 border-t text-center">
+          <!-- p-4 : Padding intérieur -->
+          <!-- border-t : Bordure en haut -->
+          <!-- text-center : Texte centré -->
+          <a href="cart.html" class="text-blue-500">Voir tout le panier</a>
+          <!-- text-blue-500 : Texte bleu vif -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Galerie -->
+  <main class="ml-60 pt-16 p-6 h-screen overflow-auto">
+    <!-- ml-60 : Marge à gauche de 60 unités pour éviter la barre latérale -->
+    <!-- pt-16 : Padding en haut de 16 unités pour éviter la navbar -->
+    <!-- p-6 : Padding intérieur -->
+    <!-- h-screen : Hauteur totale de l'écran -->
+    <!-- overflow-auto : Ajout d'une barre de défilement si nécessaire -->
+    <h2 class="text-2xl font-bold mb-6">Articles Disponibles</h2>
+    <!-- text-2xl : Texte très grand -->
+    <!-- font-bold : Texte en gras -->
+    <!-- mb-6 : Marge en bas de 6 unités -->
+    <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- grid : Affichage en grille -->
+      <!-- grid-cols-1 : 1 colonne par défaut -->
+      <!-- sm:grid-cols-2 : 2 colonnes en écran petit -->
+      <!-- md:grid-cols-3 : 3 colonnes en écran moyen -->
+      <!-- lg:grid-cols-4 : 4 colonnes en écran large -->
+      <!-- gap-6 : Espacement de 6 unités entre les articles -->
+    </div>
+  </main>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
