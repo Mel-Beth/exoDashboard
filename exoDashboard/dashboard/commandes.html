@@ -41,42 +41,48 @@
 
     <!-- Commandes en attente -->
     <h3 class="text-xl font-bold mb-4 text-yellow-700">En Attente</h3>
-    <table class="w-full mb-6 bg-white rounded-lg shadow-lg">
+    <table class="w-full mb-6 bg-white rounded-lg shadow-lg border">
       <thead class="bg-yellow-300 text-white">
         <tr>
-          <th class="px-4 py-2">ID</th>
-          <th class="px-4 py-2">Client</th>
-          <th class="px-4 py-2">Total (€)</th>
-          <th class="px-4 py-2">Actions</th>
+          <th class="px-6 py-3 text-left border-b">ID</th>
+          <th class="px-6 py-3 text-left border-b">Client</th>
+          <th class="px-6 py-3 text-left border-b">Total (€)</th>
+          <th class="px-6 py-3 text-left border-b">Détails</th>
+          <th class="px-6 py-3 text-left border-b">Stock</th>
+          <th class="px-6 py-3 text-left border-b">Actions</th>
         </tr>
       </thead>
-      <tbody id="pending-orders"></tbody>
+      <tbody id="pending-orders" class="divide-y divide-gray-200"></tbody>
     </table>
 
     <!-- Commandes approuvées -->
     <h3 class="text-xl font-bold mb-4 text-green-700">Approuvées</h3>
-    <table class="w-full mb-6 bg-white rounded-lg shadow-lg">
+    <table class="w-full mb-6 bg-white rounded-lg shadow-lg border">
       <thead class="bg-green-300 text-white">
         <tr>
-          <th class="px-4 py-2">ID</th>
-          <th class="px-4 py-2">Client</th>
-          <th class="px-4 py-2">Total (€)</th>
+          <th class="px-6 py-3 text-left border-b">ID</th>
+          <th class="px-6 py-3 text-left border-b">Client</th>
+          <th class="px-6 py-3 text-left border-b">Total (€)</th>
+          <th class="px-6 py-3 text-left border-b">Détails</th>
+          <th class="px-6 py-3 text-left border-b">Stock</th>
         </tr>
       </thead>
-      <tbody id="approved-orders"></tbody>
+      <tbody id="approved-orders" class="divide-y divide-gray-200"></tbody>
     </table>
 
     <!-- Commandes rejetées -->
     <h3 class="text-xl font-bold mb-4 text-red-700">Rejetées</h3>
-    <table class="w-full bg-white rounded-lg shadow-lg">
+    <table class="w-full bg-white rounded-lg shadow-lg border">
       <thead class="bg-red-300 text-white">
         <tr>
-          <th class="px-4 py-2">ID</th>
-          <th class="px-4 py-2">Client</th>
-          <th class="px-4 py-2">Total (€)</th>
+          <th class="px-6 py-3 text-left border-b">ID</th>
+          <th class="px-6 py-3 text-left border-b">Client</th>
+          <th class="px-6 py-3 text-left border-b">Total (€)</th>
+          <th class="px-6 py-3 text-left border-b">Détails</th>
+          <th class="px-6 py-3 text-left border-b">Stock</th>
         </tr>
       </thead>
-      <tbody id="rejected-orders"></tbody>
+      <tbody id="rejected-orders" class="divide-y divide-gray-200"></tbody>
     </table>
   </main>
 

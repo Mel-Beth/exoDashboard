@@ -1,62 +1,145 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Définition de l'encodage et des paramètres d'affichage pour la compatibilité mobile -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articles</title>
+
+  <!-- Importation des styles TailwindCSS et FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 h-screen overflow-auto">
+  <!-- bg-gray-100 : Fond gris clair -->
+  <!-- h-screen : Hauteur égale à 100% de l'écran -->
+  <!-- overflow-auto : Active le défilement si le contenu dépasse -->
 
-    <!-- Barre latérale -->
+  <!-- Barre latérale -->
   <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
-    <!-- Titre -->
+    <!-- fixed : Position fixe, reste visible même lors du défilement -->
+    <!-- inset-y-0 : Étend du haut au bas de l'écran -->
+    <!-- left-0 : Collée au bord gauche -->
+    <!-- w-60 : Largeur fixe de 240px -->
+    <!-- bg-gradient-to-b : Dégradé de haut en bas (du jaune clair au jaune foncé) -->
+    <!-- shadow-lg : Ombre large pour effet de profondeur -->
+    <!-- flex flex-col : Disposition verticale (colonne) -->
+    <!-- z-10 : Superposition au-dessus des autres éléments -->
+
+    <!-- Titre de la barre latérale -->
     <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <!-- p-6 : Padding intérieur -->
+      <!-- text-center : Texte centré horizontalement -->
+      <!-- text-white : Texte en blanc -->
+      <!-- font-bold : Texte en gras -->
+      <!-- text-xl : Taille de texte extra-large -->
+      <!-- border-b : Bordure inférieure pour séparation -->
       <i class="fas fa-store mr-2"></i>E-commerce
     </div>
-    <!-- Menu -->
+
+    <!-- Menu de navigation -->
     <nav class="flex-1 p-4 space-y-4">
+      <!-- flex-1 : Prend tout l'espace vertical restant -->
+      <!-- p-4 : Padding intérieur -->
+      <!-- space-y-4 : Espacement vertical entre les éléments -->
+
+      <!-- Lien vers le tableau de bord -->
       <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <!-- flex : Aligne les éléments horizontalement -->
+        <!-- items-center : Centre verticalement -->
+        <!-- space-x-3 : Espacement horizontal entre les éléments -->
+        <!-- text-white : Texte en blanc -->
+        <!-- hover:text-yellow-200 : Texte jaune clair au survol -->
+        <!-- p-3 : Padding intérieur -->
+        <!-- rounded-lg : Coins arrondis -->
         <i class="fas fa-chart-line"></i> <span>Tableau de Bord</span>
       </a>
+
+      <!-- Lien vers la page des articles -->
       <a href="articles.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
         <i class="fas fa-box"></i> <span>Articles</span>
       </a>
+
+      <!-- Lien vers la page des commandes -->
       <a href="commandes.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
         <i class="fas fa-truck"></i> <span>Commandes</span>
       </a>
     </nav>
   </aside>
 
-  <!-- Navbar -->
+  <!-- Barre de navigation supérieure -->
   <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <!-- fixed : Position fixe en haut -->
+    <!-- top-0 : Collée au haut de la page -->
+    <!-- left-60 : Décalée pour s'aligner après la barre latérale -->
+    <!-- right-0 : S'étend jusqu'au bord droit -->
+    <!-- bg-white : Fond blanc -->
+    <!-- shadow-md : Ombre légère -->
+    <!-- h-16 : Hauteur fixe de 64px -->
+    <!-- flex : Aligne horizontalement -->
+    <!-- items-center : Centre verticalement -->
+    <!-- px-6 : Padding horizontal -->
+    <!-- z-10 : Superposition au-dessus des autres éléments -->
+
     <h1 class="text-xl font-bold text-yellow-700 flex-1">Articles</h1>
+    <!-- text-xl : Texte extra-large -->
+    <!-- font-bold : Texte en gras -->
+    <!-- text-yellow-700 : Texte jaune foncé -->
+    <!-- flex-1 : Remplit tout l'espace disponible horizontalement -->
+
+    <!-- Bouton de retour au tableau de bord -->
     <a href="index.html" class="bg-yellow-500 text-white px-4 py-2 rounded-md shadow hover:bg-yellow-600 ml-4">
+      <!-- bg-yellow-500 : Fond jaune -->
+      <!-- text-white : Texte blanc -->
+      <!-- px-4 py-2 : Padding horizontal et vertical -->
+      <!-- rounded-md : Coins légèrement arrondis -->
+      <!-- shadow : Ombre légère -->
+      <!-- hover:bg-yellow-600 : Fond plus foncé au survol -->
+      <!-- ml-4 : Marge à gauche -->
       Retour au Dashboard
     </a>
   </header>
 
-  <!-- Contenu -->
+  <!-- Contenu principal -->
   <main class="ml-60 pt-16 p-6 h-screen overflow-auto">
+    <!-- ml-60 : Décalage pour éviter la barre latérale -->
+    <!-- pt-16 : Padding en haut pour compenser la barre de navigation -->
+    <!-- p-6 : Padding général -->
+    <!-- h-screen : Hauteur complète de l'écran -->
+    <!-- overflow-auto : Défilement activé si nécessaire -->
+
+    <!-- Titre principal -->
     <h2 class="text-2xl font-bold mb-6">Liste des Articles</h2>
+    <!-- text-2xl : Texte très grand -->
+    <!-- font-bold : Texte en gras -->
+    <!-- mb-6 : Marge inférieure -->
+
     <!-- Grille d'articles -->
     <div id="articles-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    <!-- grid : Affichage en grille -->
+    <!-- grid-cols-1 : Une colonne par défaut -->
+    <!-- sm:grid-cols-2 : Deux colonnes sur petits écrans -->
+    <!-- md:grid-cols-3 : Trois colonnes sur écrans moyens -->
+    <!-- lg:grid-cols-4 : Quatre colonnes sur grands écrans -->
+    <!-- gap-6 : Espacement horizontal et vertical -->
 
-    <!-- Formulaire pour ajouter un article -->
+    <!-- Formulaire pour ajouter un nouvel article -->
     <div class="bg-white p-6 rounded-lg shadow-lg mb-6 mt-6">
-        <h3 class="text-xl font-bold mb-4">Ajouter un nouvel article</h3>
-        <input id="newName" type="text" placeholder="Nom de l'article" class="w-full p-2 mb-4 border rounded">
-        <input id="newPrice" type="number" placeholder="Prix (€)" class="w-full p-2 mb-4 border rounded">
-        <input id="newStock" type="number" placeholder="Stock" class="w-full p-2 mb-4 border rounded">
-        <input id="newCategory" type="text" placeholder="Catégorie" class="w-full p-2 mb-4 border rounded">
-        <textarea id="newDescription" placeholder="Description" class="w-full p-2 mb-4 border rounded"></textarea>
-        <button onclick="ajouterArticle()" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
+      <!-- Formulaire avec fond blanc et ombre -->
+      <h3 class="text-xl font-bold mb-4">Ajouter un nouvel article</h3>
+      <!-- Champs de formulaire -->
+      <input id="newName" type="text" placeholder="Nom de l'article" class="w-full p-2 mb-4 border rounded">
+      <input id="newPrice" type="number" placeholder="Prix (€)" class="w-full p-2 mb-4 border rounded">
+      <input id="newStock" type="number" placeholder="Stock" class="w-full p-2 mb-4 border rounded">
+      <input id="newCategory" type="text" placeholder="Catégorie" class="w-full p-2 mb-4 border rounded">
+      <textarea id="newDescription" placeholder="Description" class="w-full p-2 mb-4 border rounded"></textarea>
+      <button onclick="ajouterArticle()" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
         Ajouter
-        </button>
-    </div>  
+      </button>
+    </div>
   </main>
 
+  <!-- Script JS -->
   <script src="articles.js"></script>
 </body>
 </html>

@@ -1,49 +1,119 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Métadonnées pour l'encodage et l'affichage responsive -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Détails de l'article</title>
+
+  <!-- Importation de TailwindCSS pour la mise en page -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <!-- Importation de FontAwesome pour les icônes -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 h-screen overflow-auto">
+  <!-- bg-gray-100 : Fond gris clair -->
+  <!-- h-screen : Hauteur à 100% de l'écran -->
+  <!-- overflow-auto : Ajoute une barre de défilement si nécessaire -->
 
-    <!-- Barre latérale -->
+  <!-- Barre latérale -->
   <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
-    <!-- Titre -->
+    <!-- fixed : Position fixe sur la gauche -->
+    <!-- inset-y-0 : Occupe toute la hauteur -->
+    <!-- left-0 : Aligné à gauche -->
+    <!-- w-60 : Largeur fixe de 240px -->
+    <!-- bg-gradient-to-b : Dégradé du jaune clair vers foncé -->
+    <!-- shadow-lg : Ombre large pour effet de profondeur -->
+    <!-- flex flex-col : Disposition verticale (colonne) -->
+    <!-- z-10 : S'assure que la barre latérale est au-dessus des autres éléments -->
+
+    <!-- Titre de la barre latérale -->
     <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <!-- p-6 : Padding intérieur -->
+      <!-- text-center : Centre le texte horizontalement -->
+      <!-- text-white : Texte blanc -->
+      <!-- font-bold : Texte en gras -->
+      <!-- text-xl : Taille de texte extra-large -->
+      <!-- border-b : Bordure inférieure pour séparation -->
       <i class="fas fa-store mr-2"></i>E-commerce
     </div>
-    <!-- Menu -->
+
+    <!-- Menu de navigation -->
     <nav class="flex-1 p-4 space-y-4">
+      <!-- flex-1 : Remplit tout l'espace vertical disponible -->
+      <!-- p-4 : Padding intérieur -->
+      <!-- space-y-4 : Espacement vertical entre les éléments -->
+
+      <!-- Lien vers le tableau de bord -->
       <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <!-- flex : Aligne les éléments horizontalement -->
+        <!-- items-center : Centre verticalement -->
+        <!-- space-x-3 : Espacement horizontal entre les éléments -->
+        <!-- text-white : Texte en blanc -->
+        <!-- hover:text-yellow-200 : Texte jaune clair au survol -->
+        <!-- p-3 : Padding intérieur -->
+        <!-- rounded-lg : Coins arrondis -->
         <i class="fas fa-chart-line"></i> <span>Tableau de Bord</span>
       </a>
+
+      <!-- Lien vers la page des articles -->
       <a href="articles.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
         <i class="fas fa-box"></i> <span>Articles</span>
       </a>
+
+      <!-- Lien vers la page des commandes -->
       <a href="commandes.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
         <i class="fas fa-truck"></i> <span>Commandes</span>
       </a>
     </nav>
   </aside>
 
-  <!-- Navbar -->
+  <!-- Barre de navigation supérieure -->
   <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <!-- fixed : Position fixe en haut -->
+    <!-- top-0 : Collée au haut de la page -->
+    <!-- left-60 : Décalée pour s'aligner avec la barre latérale -->
+    <!-- right-0 : Étendue jusqu'au bord droit -->
+    <!-- bg-white : Fond blanc -->
+    <!-- shadow-md : Ombre légère -->
+    <!-- h-16 : Hauteur fixe de 64px -->
+    <!-- flex : Aligne horizontalement -->
+    <!-- items-center : Centre verticalement -->
+    <!-- px-6 : Padding horizontal -->
+    <!-- z-10 : Superposition au-dessus des autres éléments -->
+
     <h1 class="text-xl font-bold text-yellow-700 flex-1">Articles</h1>
+    <!-- text-xl : Texte extra-large -->
+    <!-- font-bold : Texte en gras -->
+    <!-- text-yellow-700 : Texte jaune foncé -->
+    <!-- flex-1 : Remplit tout l'espace horizontal disponible -->
+
+    <!-- Bouton de retour au tableau de bord -->
     <a href="index.html" class="bg-yellow-500 text-white px-4 py-2 rounded-md shadow hover:bg-yellow-600">
+      <!-- bg-yellow-500 : Fond jaune -->
+      <!-- text-white : Texte blanc -->
+      <!-- px-4 py-2 : Padding horizontal et vertical -->
+      <!-- rounded-md : Coins arrondis -->
+      <!-- shadow : Ombre légère -->
+      <!-- hover:bg-yellow-600 : Fond plus foncé au survol -->
       Retour au Dashboard
     </a>
   </header>
 
   <!-- Contenu principal -->
   <main id="article-details" class="p-6 max-w-4xl mx-auto bg-white rounded-lg shadow-lg mt-20">
+    <!-- p-6 : Padding intérieur -->
+    <!-- max-w-4xl : Largeur maximale fixée à 64rem (1024px) -->
+    <!-- mx-auto : Centre horizontalement -->
+    <!-- bg-white : Fond blanc -->
+    <!-- rounded-lg : Coins arrondis -->
+    <!-- shadow-lg : Ombre large pour profondeur -->
+    <!-- mt-20 : Marge supérieure de 80px (pour décaler après la navbar) -->
 
-    <!-- Les détails de l'article seront générés ici -->
+    <!-- Détails de l'article générés dynamiquement -->
   </main>
 
-  <!-- Script -->
+  <!-- Script pour le comportement dynamique -->
   <script src="article.js"></script>
 </body>
 </html>

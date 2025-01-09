@@ -5,22 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard E-commerce</title>
 
-  <!-- Tailwind CSS et FontAwesome -->
+  <!-- Intégration de Tailwind CSS pour le style et FontAwesome pour les icônes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <!-- Chart.js pour les graphiques -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-100 h-screen overflow-hidden">
+  <!-- Fond gris clair, hauteur plein écran et désactivation du défilement horizontal -->
 
   <!-- Barre latérale -->
   <aside class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-lg flex flex-col z-10">
-    <!-- Titre -->
+    <!-- Position fixe, hauteur étendue sur l'écran vertical, largeur de 60 unités -->
+    <!-- Fond en dégradé du jaune clair au jaune foncé, ombre légère, disposition verticale -->
     <div class="p-6 text-center text-white font-bold text-xl border-b">
+      <!-- Remplissage intérieur, centrage du texte, blanc, gras et taille XL -->
       <i class="fas fa-store mr-2"></i>E-commerce
+      <!-- Icône avec espace à droite -->
     </div>
+
     <!-- Menu -->
     <nav class="flex-1 p-4 space-y-4">
+      <!-- Flex vertical prenant tout l'espace, rembourrage intérieur et espace vertical entre éléments -->
       <a href="index.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
+        <!-- Icône et texte alignés horizontalement, espace entre eux -->
+        <!-- Texte blanc avec effet au survol, rembourrage et coins arrondis -->
         <i class="fas fa-chart-line"></i> <span>Tableau de Bord</span>
       </a>
       <a href="articles.html" class="flex items-center space-x-3 text-white hover:text-yellow-200 p-3 rounded-lg">
@@ -32,18 +41,27 @@
     </nav>
   </aside>
 
-  <!-- En-tête (fixée en haut) -->
+  <!-- En-tête fixée en haut -->
   <header class="fixed top-0 left-60 right-0 bg-white shadow-md h-16 flex items-center px-6 z-10">
+    <!-- Position fixe, largeur définie, fond blanc, ombre légère -->
+    <!-- Hauteur définie à 16 unités, alignement horizontal des éléments -->
     <h1 class="text-xl font-bold text-yellow-700 flex-1">Dashboard E-commerce</h1>
+    <!-- Texte jaune foncé, taille XL, gras, prend tout l'espace restant -->
   </header>
 
   <!-- Contenu principal avec scroll activé -->
   <main class="ml-60 pt-16 p-6 h-screen overflow-auto">
+    <!-- Marge à gauche pour éviter la barre latérale, remplissage intérieur -->
+    <!-- Hauteur pleine page et défilement activé -->
     <h2 class="text-2xl font-bold mb-6">Statistiques</h2>
+    <!-- Titre avec taille XXL, gras et marge inférieure -->
+
     <!-- Grille des graphiques -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-      <!-- Graphiques -->
+      <!-- Mise en grille : 1 colonne par défaut, 2 en taille moyenne et grande -->
+      <!-- Espacement de 6 unités entre les graphiques -->
       <div class="bg-white p-6 rounded-lg shadow-lg">
+        <!-- Fond blanc, rembourrage intérieur, coins arrondis et ombre légère -->
         <canvas id="userTrafficChart"></canvas>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-lg">
